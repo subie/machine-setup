@@ -11,7 +11,7 @@ PYENV_SETUP_PYTHON_VERSION=3.9.16
 
 # symlink dotfiles.
 sudo apt-get -y install stow
-(cd .dotfiles/ && stow .)
+(cd ~/.dotfiles/ && stow .)
 
 # Setup zsh.
 sudo apt-get -y install zsh
