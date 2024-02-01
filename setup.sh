@@ -21,7 +21,7 @@ chsh -s $(which zsh)
 [[ ! -f ~/.fzf.zsh ]] && ${FZF_INSTALL_PATH}/install
 
 # Install pyenv and recentish python version.
-sudo apt-get -y install libssl-dev
+sudo apt-get -y install libssl-dev libbz2-dev
 [[ ! -d ${PYENV_INSTALL_PATH} ]] && git clone https://github.com/pyenv/pyenv.git ${PYENV_INSTALL_PATH}
 eval "$(${PYENV_INSTALL_PATH}/bin/pyenv init)"
 ${PYENV_INSTALL_PATH}/bin/pyenv install ${PYENV_SETUP_PYTHON_VERSION}
