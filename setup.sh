@@ -9,6 +9,8 @@ PYENV_SETUP_PYTHON_VERSION=3.9.16
 # Get my dotfiles.
 [[ ! -d ~/.dotfiles ]] && git clone https://github.com/subie/dotfiles.git ~/.dotfiles
 
+sudoe apt-get update
+
 # symlink dotfiles.
 sudo apt-get -y install stow
 (cd ~/.dotfiles/ && stow .)
@@ -21,7 +23,7 @@ chsh -s $(which zsh)
 [[ ! -f ~/.fzf.zsh ]] && ${FZF_INSTALL_PATH}/install
 
 # Install pyenv and recentish python version.
-sudo apt-get -y install libssl-dev libbz2-dev
+sudo apt-get -y install libssl-dev libbz2-dev libsqlite3-dev libreadline-dev libncurses-dev
 [[ ! -d ${PYENV_INSTALL_PATH} ]] && git clone https://github.com/pyenv/pyenv.git ${PYENV_INSTALL_PATH}
 eval "$(${PYENV_INSTALL_PATH}/bin/pyenv init)"
 ${PYENV_INSTALL_PATH}/bin/pyenv install ${PYENV_SETUP_PYTHON_VERSION}
