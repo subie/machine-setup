@@ -31,3 +31,4 @@ ${PYENV_INSTALL_PATH}/versions/3.9.16/bin/pip install powerline-status
 
 # tmux stuff.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+python3 -m pip install --user libtmux
