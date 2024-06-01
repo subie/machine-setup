@@ -9,7 +9,7 @@ PYENV_SETUP_PYTHON_VERSION=3.9.16
 # Get my dotfiles.
 [[ ! -d ~/.dotfiles ]] && git clone https://github.com/subie/dotfiles.git ~/.dotfiles
 
-sudoe apt-get update
+sudo apt-get update
 
 # symlink dotfiles.
 sudo apt-get -y install stow
