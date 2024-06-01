@@ -28,3 +28,6 @@ sudo apt-get -y install libssl-dev libbz2-dev libsqlite3-dev libreadline-dev lib
 eval "$(${PYENV_INSTALL_PATH}/bin/pyenv init)"
 ${PYENV_INSTALL_PATH}/bin/pyenv install ${PYENV_SETUP_PYTHON_VERSION}
 ${PYENV_INSTALL_PATH}/versions/3.9.16/bin/pip install powerline-status
+
+# tmux stuff.
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
