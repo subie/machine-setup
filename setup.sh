@@ -4,7 +4,7 @@
 POWERLEVEL10K_INSTALL_PATH=~/powerlevel10k
 FZF_INSTALL_PATH=~/.fzf
 PYENV_INSTALL_PATH=~/.pyenv
-PYENV_SETUP_PYTHON_VERSION=3.9.16
+PYENV_SETUP_PYTHON_VERSION=3.10.12
 
 # Get my dotfiles.
 [[ ! -d ~/.dotfiles ]] && git clone https://github.com/subie/dotfiles.git ~/.dotfiles
@@ -27,7 +27,7 @@ sudo apt-get -y install libssl-dev libbz2-dev libsqlite3-dev libreadline-dev lib
 [[ ! -d ${PYENV_INSTALL_PATH} ]] && git clone https://github.com/pyenv/pyenv.git ${PYENV_INSTALL_PATH}
 eval "$(${PYENV_INSTALL_PATH}/bin/pyenv init)"
 ${PYENV_INSTALL_PATH}/bin/pyenv install ${PYENV_SETUP_PYTHON_VERSION}
-${PYENV_INSTALL_PATH}/versions/3.9.16/bin/pip install powerline-status
+${PYENV_INSTALL_PATH}/versions/${PYENV_SETUP_PYTHON_VERSION}/bin/pip install powerline-status
 
 # tmux stuff.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
