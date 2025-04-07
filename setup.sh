@@ -8,6 +8,7 @@ FZF_INSTALL_PATH=~/.fzf
 [[ ! -d ~/.dotfiles ]] && git clone https://github.com/subie/dotfiles.git ~/.dotfiles
 
 sudo apt-get update
+sudo apt-get install ispell
 
 # symlink dotfiles.
 sudo apt-get -y install stow
