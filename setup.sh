@@ -17,7 +17,7 @@ sudo apt-get -y install stow
 # Setup zsh.
 sudo apt-get -y install zsh
 [[ ! -d ${POWERLEVEL10K_INSTALL_PATH} ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${POWERLEVEL10K_INSTALL_PATH}
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 [[ ! -d ${FZF_INSTALL_PATH} ]] && git clone --depth 1 https://github.com/junegunn/fzf.git ${FZF_INSTALL_PATH}
 [[ ! -f ~/.fzf.zsh ]] && ${FZF_INSTALL_PATH}/install
 
@@ -34,3 +34,11 @@ if [ "$(mosh --version | head -1 | cut -d" " -f2)" != "1.4.0" ]; then
     ./configure
     sudo make install
 fi
+
+# Copilot stuff.
+sudo apt-get install npm
+sudo npm install -g @github/copilot-language-server --prefix /usr/local
+# On Ubuntu 20.04, the best way to install nodejs 20 is to use snap.
+sudo snap install node --channel=20/stable --classic
+sudo mv /usr/bin/node /usr/bin/node_old
+sudo ln -s /snap/bin/node /usr/bin/node
