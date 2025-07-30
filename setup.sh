@@ -17,7 +17,7 @@ sudo apt-get -y install stow
 # Setup zsh.
 sudo apt-get -y install zsh
 [[ ! -d ${POWERLEVEL10K_INSTALL_PATH} ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${POWERLEVEL10K_INSTALL_PATH}
-sudo chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $(whoami)
 [[ ! -d ${FZF_INSTALL_PATH} ]] && git clone --depth 1 https://github.com/junegunn/fzf.git ${FZF_INSTALL_PATH}
 [[ ! -f ~/.fzf.zsh ]] && ${FZF_INSTALL_PATH}/install
 
