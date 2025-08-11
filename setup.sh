@@ -42,3 +42,5 @@ sudo npm install -g @github/copilot-language-server --prefix /usr/local
 sudo snap install node --channel=20/stable --classic
 sudo mv /usr/bin/node /usr/bin/node_old
 sudo ln -s /snap/bin/node /usr/bin/node
+
+timedatectl set-timezone "America/Los_Angeles"
