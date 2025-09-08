@@ -25,15 +25,7 @@ sudo chsh -s $(which zsh) $(whoami)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 python3 -m pip install --user libtmux
 
-# mosh (with true color).
-if [ "$(mosh --version | head -1 | cut -d" " -f2)" != "1.4.0" ]; then
-    sudo apt-get -y install protobuf-compiler
-    wget https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz
-    tar -xvf mosh-1.4.0.tar.gz
-    cd mosh-1.4.0
-    ./configure
-    sudo make install
-fi
+sudo apt-get install mosh
 
 # Copilot stuff.
 sudo apt-get install npm
