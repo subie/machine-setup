@@ -27,6 +27,13 @@ python3 -m pip install --user libtmux
 
 sudo apt-get install mosh
 
+# GPG + pass for credential storage (used by git-credential-manager).
+sudo apt-get -y install pass pinentry-curses
+if ! gpg --list-keys &>/dev/null; then
+    echo "No GPG key found. Generate one with: gpg --gen-key"
+    echo "Then initialize pass with: pass init <gpg-key-id>"
+fi
+
 # Copilot stuff.
 sudo apt-get install npm
 sudo npm install -g @github/copilot-language-server --prefix /usr/local
