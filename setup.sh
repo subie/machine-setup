@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# Usage: ./setup.sh
+# Work:  WORK_GITHUB_PAT=ghp_xxx WORK_DOTFILES_REPO=org/repo ./setup.sh
 
 # TODO: move these into an env file.
 POWERLEVEL10K_INSTALL_PATH=~/powerlevel10k
@@ -12,7 +15,18 @@ sudo apt-get install ispell
 
 # symlink dotfiles.
 sudo apt-get -y install stow
-(cd ~/.dotfiles/ && stow .)
+(cd ~/.dotfiles/ && stow --no-folding .)
+
+# Work dotfiles (optional).
+# Usage: WORK_GITHUB_PAT=ghp_xxx WORK_DOTFILES_REPO=org/repo ./setup.sh
+if [[ -n "$WORK_DOTFILES_REPO" ]]; then
+  if [[ -z "$WORK_GITHUB_PAT" ]]; then
+    echo "Error: WORK_GITHUB_PAT is required when WORK_DOTFILES_REPO is set."
+    exit 1
+  fi
+  [[ ! -d ~/.dotfiles-work ]] && git clone "https://${WORK_GITHUB_PAT}@github.com/${WORK_DOTFILES_REPO}.git" ~/.dotfiles-work
+  (cd ~/.dotfiles-work/ && stow --no-folding .)
+fi
 
 # Setup zsh.
 sudo apt-get -y install zsh
