@@ -13,6 +13,9 @@ FZF_INSTALL_PATH=~/.fzf
 sudo apt-get update
 sudo apt-get install ispell
 
+# Modern CLI tools (fd-find, bat, ripgrep).
+sudo apt-get -y install fd-find bat ripgrep
+
 # symlink dotfiles.
 sudo apt-get -y install stow
 (cd ~/.dotfiles/ && stow --no-folding .)
@@ -38,6 +41,12 @@ sudo chsh -s $(which zsh) $(whoami)
 # tmux stuff.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 python3 -m pip install --user libtmux
+
+# Atuin (shell history).
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
+
+# Zoxide (smart cd).
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 sudo apt-get install mosh
 
