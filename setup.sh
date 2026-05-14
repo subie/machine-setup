@@ -40,7 +40,6 @@ sudo chsh -s $(which zsh) $(whoami)
 
 # tmux stuff.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-python3 -m pip install --user libtmux
 
 # Atuin (shell history).
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
